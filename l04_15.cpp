@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
 	int tid;
-	omp_set_num_threads(2);
 
 	omp_set_nested(1);
 	#pragma omp parallel num_threads(3) private (tid)
