@@ -31,7 +31,7 @@ int n;
 	}
 	}
 	cout<<"Parallel area:"<<n<<endl;
-	}
+}
 
 return 0;
 }

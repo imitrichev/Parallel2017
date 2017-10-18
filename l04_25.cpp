@@ -12,12 +12,12 @@ int main()
 	#pragma omp parallel shared (A,B,C) private (i,n) num_threads(2)
 	{
 		n = omp_get_thread_num();
-	// on my PC 10 chunk size
+	// on my PC - 10 initial chunk size
 		#pragma omp for schedule (guided) ordered
 		for (i=0;i<20;i++)
 		{
 			C[i]=A[i]+B[i];
-// ordered execution
+	// ordered execution
 			#pragma omp ordered
 			cout<<i<<" by "<<n<<endl;
 		}

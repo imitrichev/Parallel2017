@@ -8,12 +8,12 @@ using namespace std;
 int main()
 {
 srand(time(NULL));
-int i,n;
+int n;
 #pragma omp parallel num_threads(3)
 {
-	#pragma omp for private(i) lastprivate(n)
-		for (i=0; i<10; i++)
-		    n=i;
+	#pragma omp for lastprivate(n)
+		for (n=0; n<10; n++)
+			cout<<omp_get_thread_num()<<" "<<n<<endl;
 
 // gives 9
 	cout<<"Parallel area:"<<n<<endl;
